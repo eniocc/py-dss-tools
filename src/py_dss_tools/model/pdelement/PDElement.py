@@ -49,7 +49,7 @@ class PDElement(ABC):
         if self._name != '':
             return
         else:
-            self._name = 'my_pdelement_' + Utils.generate_random_string()
+            self._name = f'my_pdelement_{Utils.generate_random_string()}'
 
     @property
     @abstractmethod

@@ -28,7 +28,7 @@ class Report(FPDF):
         self.set_y(-15)
         self.set_font('Arial', 'I', 8)
         # Page number
-        self.cell(0, 10, 'Page ' + str(self.page_no()) + '/{nb}', 0, 0, 'C')
+        self.cell(0, 10, f'Page {str(self.page_no())}' + '/{nb}', 0, 0, 'C')
 
     def __init__(self, **kwargs):
         self.font = 'Arial'
@@ -53,7 +53,7 @@ class Report(FPDF):
 
     def sample(self):
         for i in range(1, 41):
-            self.cell(0, 10, 'Printing line number ' + str(i), 0, 1)
+            self.cell(0, 10, f'Printing line number {str(i)}', 0, 1)
 
         self.set_author("Ênio Rodrigues Viana")
         self.set_creator("Ênio Rodrigues Viana")
@@ -61,7 +61,7 @@ class Report(FPDF):
         # pdf.cell(60, 20, 'Powered by FPDF.', 0, 1, 'C')
         name = "tuto1.pdf"
         try:
-            self.output('../../output/' + name, 'F')
+            self.output(f'../../output/{name}', 'F')
             current_dir = pathlib.Path(__file__).parent.resolve()
             current_dir = current_dir.joinpath('../../output')
             if self.open_:
