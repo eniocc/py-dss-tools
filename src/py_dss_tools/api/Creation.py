@@ -178,7 +178,7 @@ def __translate_transformers(sc: Scenario):
                 trafo_name = attribute_value
                 continue
 
-            if isinstance(attribute_value, str) and attribute_name != 'name':
+            if isinstance(attribute_value, str):
                 attribute_value = f"'{attribute_value}'"
 
             result += f"{attribute_name}={attribute_value} "
